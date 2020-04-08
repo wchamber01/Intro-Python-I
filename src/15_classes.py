@@ -12,24 +12,26 @@ class LatLon:
 
 # YOUR CODE HERE
 class Waypoint(LatLon):
-  def __init__(self, name):
-    super().__init__()
+  def __init__(self, name, lat, lon):
+    super().__init__(lat, lon)
     self.name = name
 
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
 
 # YOUR CODE HERE
-class Geocache(Waypoint, LatLon):
-    def __init__(self, name, difficulty, size):
-        super().__init__(name)
+class Geocache(Waypoint):
+    def __init__(self, name, lat, lon, difficulty, size):
+        super().__init__(name, lat, lon)
         self.difficulty = difficulty
         self.size = size
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
 
 # YOUR CODE HERE
-catacombs = Waypoint('Catacombs', 41.70505, -121.51521)
+
+def __str__(waypoint):
+    waypoint.Waypoint = ('Catacombs', 41.70505, -121.51521)
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
@@ -40,4 +42,4 @@ print(waypoint)
 # YOUR CODE HERE
 
 # Print it--also make this print more nicely
-print(geocache)
+#print(geocache)
