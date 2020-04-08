@@ -4,10 +4,11 @@
 # When you use a variable in a function, it's local in scope to the function.
 x = 12
 
-def change_x(x):
+def change_x():
+    global x #Must add the Global scope to change val of x on the outside
     x = 99
 
-change_x(99)
+change_x()
 
 # This prints 12. What do we have to modify in change_x() to get it to print 99?
 print(x)
@@ -19,6 +20,7 @@ def outer():
     y = 120
 
     def inner():
+        nonlocal y #Must add nonlocal instead of global to change val of y on the outside
         y = 999
 
     inner()
