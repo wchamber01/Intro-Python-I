@@ -30,7 +30,7 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
-from datetime import date
+from datetime import date #had to import date to utilize date.today()
 
 today = date.today()
 
@@ -39,6 +39,9 @@ if len(sys.argv) == 1:
     
 elif len(sys.argv) == 2:
     print(calendar.month(today.year, int(sys.argv[1])))
+    
+elif len(sys.argv)>3:
+    print('Please indicate the 2 digit month and 4 digit year for the calendar you wish to view')
 
 else:
     print(calendar.month(int(sys.argv[2]),int(sys.argv[1])))
