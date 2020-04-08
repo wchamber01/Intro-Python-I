@@ -5,6 +5,7 @@
 x = 12
 
 def change_x():
+    global x #Must add the Global scope to change val of x on the outside
     x = 99
 
 change_x()
@@ -19,6 +20,7 @@ def outer():
     y = 120
 
     def inner():
+        nonlocal y #Must add nonlocal instead of global to change val of y on the outside
         y = 999
 
     inner()
